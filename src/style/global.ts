@@ -29,6 +29,14 @@ export const GlobalStyle = createGlobalStyle`
         list-style: none;
     }
 
+    a {
+        text-decoration: none;
+        
+    }
+
+    a:visited {
+    color: var(--black);
+  }
 
 }
 
