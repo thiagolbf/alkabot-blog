@@ -1,5 +1,11 @@
+import { GlobalStyle } from "./style/global";
+
 function App() {
-  return <h1>Alkabot Project</h1>;
+  return (
+    <>
+      <GlobalStyle />
+    </>
+  );
 }
 
 export default App;
