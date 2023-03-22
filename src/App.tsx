@@ -4,6 +4,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <p>Akabot BLOG</p>
     </>
   );
 }
