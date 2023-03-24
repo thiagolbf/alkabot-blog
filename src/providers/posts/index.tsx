@@ -12,8 +12,18 @@ interface Posts {
   body: string;
 }
 
+interface Comments {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
+
 interface PostsProviderData {
   posts: Posts[];
+  comments: Comments[];
+  getPostsComments: (postId: number) => void;
 }
 
 export const PostsContext = createContext<PostsProviderData>(
@@ -22,6 +32,7 @@ export const PostsContext = createContext<PostsProviderData>(
 
 export const PostsProvider = ({ children }: PostsProviderProps) => {
   const [posts, setPosts] = useState<Posts[]>([] as Posts[]);
+  const [comments, setComments] = useState<Comments[]>([] as Comments[]);
 
   useEffect(() => {
     axios
@@ -34,7 +45,36 @@ export const PostsProvider = ({ children }: PostsProviderProps) => {
       });
   }, []);
 
+  const getPostsComments = (postId: number) => {
+    axios
+      .get(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
+      .then((res) => {
+        const updateComments = comments.some((value) => {
+          if (value.postId === postId) {
+            return true;
+          }
+        });
+
+        if (updateComments) {
+          const removeOldComments = comments.filter((value) => {
+            if (value.postId !== postId) {
+              return value;
+            }
+          });
+
+          setComments([...removeOldComments, ...res.data]);
+        } else {
+          setComments([...comments, ...res.data]);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <PostsContext.Provider value={{ posts }}>{children}</PostsContext.Provider>
+    <PostsContext.Provider value={{ posts, comments, getPostsComments }}>
+      {children}
+    </PostsContext.Provider>
   );
 };
