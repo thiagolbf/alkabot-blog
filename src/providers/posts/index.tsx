@@ -45,16 +45,19 @@ export const PostsProvider = ({ children }: PostsProviderProps) => {
       });
   }, []);
 
+  //every time when user check comments, will trigger this function to update comments or get if is the first time
   const getPostsComments = (postId: number) => {
     axios
       .get(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
       .then((res) => {
+        //check if there are comments with this ID
         const updateComments = comments.some((value) => {
           if (value.postId === postId) {
             return true;
           }
         });
 
+        //if have comments in ID remove old comments and add new
         if (updateComments) {
           const removeOldComments = comments.filter((value) => {
             if (value.postId !== postId) {

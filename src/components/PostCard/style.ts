@@ -6,7 +6,7 @@ interface PostContainerProps {
 
 export const PostContainer = styled.div<PostContainerProps>`
   width: 300px;
-  max-height: 350px;
+  max-height: 300px;
   overflow: auto;
   padding: 10px;
 
@@ -63,6 +63,7 @@ export const CommentsContainer = styled.div`
   background-color: var(--lightGray);
 
   margin: 5px;
+
   padding: 10px;
 
   border-radius: 5px;

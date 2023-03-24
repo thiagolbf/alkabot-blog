@@ -44,6 +44,10 @@ export const PostCardComponent = ({
     setActive(!active);
   };
 
+  /*This is for trigger the function when the user will see comments. 
+  If will hide comments it's not necessary to update commets.
+  Function below it's for this rule.
+  */
   useEffect(() => {
     if (active && !commentsFetched) {
       getPostsComments(postId);

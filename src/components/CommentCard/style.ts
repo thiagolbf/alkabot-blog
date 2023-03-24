@@ -7,12 +7,12 @@ export const CommentContainer = styled.div`
 
   > p {
     margin: 2px;
-    font-size: 12px;
+    font-size: 14px;
 
     text-align: justify;
 
     > span {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
     }
   }
