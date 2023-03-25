@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 :root {
-    --black: #FFFFF;
+    --black: #000000;
     --white: #FFFFFF;
     --gray: #9f9f9f;
     --middleGray: #e9e9e9;
@@ -29,6 +29,14 @@ export const GlobalStyle = createGlobalStyle`
         list-style: none;
     }
 
+    a {
+        text-decoration: none;
+        
+    }
+
+    a:visited {
+    color: var(--black);
+  }
 
 }
 
