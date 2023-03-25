@@ -2,7 +2,8 @@ import { Route, Routes } from "react-router-dom";
 
 import { Header } from "../components/Header";
 import { HomePage } from "../pages/Home";
-import { PostPage } from "../pages/Posts";
+import { PostsPage } from "../pages/Posts";
+import { UsersPage } from "../pages/Users";
 
 export const RoutesComponent = () => {
   return (
@@ -10,7 +11,8 @@ export const RoutesComponent = () => {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/posts" element={<PostPage />} />
+        <Route path="/posts" element={<PostsPage />} />
+        <Route path="/users" element={<UsersPage />} />
       </Routes>
     </>
   );

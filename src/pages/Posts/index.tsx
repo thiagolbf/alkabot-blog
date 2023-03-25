@@ -5,7 +5,7 @@ import { PostsContext } from "../../providers/posts";
 
 import { PostCardComponent } from "../../components/PostCard";
 
-export const PostPage = () => {
+export const PostsPage = () => {
   const { posts } = useContext(PostsContext);
   return (
     <PostPageContainer>
