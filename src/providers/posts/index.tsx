@@ -45,7 +45,7 @@ export const PostsProvider = ({ children }: PostsProviderProps) => {
       });
   }, []);
 
-  //every time when user check comments, will trigger this function to update comments or get if is the first time
+  //every time when user check comments, will trigger this function to update comments or get, if is the first time
   const getPostsComments = (postId: number) => {
     axios
       .get(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
