@@ -28,6 +28,9 @@ export const HeaderContainer = styled.header`
 
     > li {
       margin: 5px 5px;
+      > a {
+        color: var(--black);
+      }
     }
 
     @media screen and (max-width: 500px) {
