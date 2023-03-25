@@ -1,6 +1,6 @@
 # AlkabotBlog
 
-#### Projeto (Front-End) de um blog onde os posts e usuários cadastrados são apresentados e ao clicar no post os comentários associados são apresentados.
+#### Projeto (Front-End) de um blog onde possui posts e usuários cadastrados e ao clicar no post os comentários associados são apresentados.
 
 #### Para rodar o projeto em seu computador é necessário fazer o clone do repositório e utilizar os comandos abaixo (seguir a mesma ordem);
 
